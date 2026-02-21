@@ -1,0 +1,6 @@
+name: "Motivational Message"
+description: "Logs a motivational quote when an issue is labeled 'motivate'"
+author: "Alejandro"
+runs:
+  using: "node20"
+  main: "index.js"

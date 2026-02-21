@@ -1,0 +1,17 @@
+name: Motivate on Issue Label
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  motivate:
+    # Run only when the label applied is exactly 'motivate'
+    if: ${{ github.event.label.name == 'motivate' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (required to access local action)
+        uses: actions/checkout@v4
+
+      - name: Run custom Motivational Action
+        uses: ./.github/actions/motivate
